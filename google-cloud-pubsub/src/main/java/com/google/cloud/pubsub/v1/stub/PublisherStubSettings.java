@@ -233,6 +233,10 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     return "pubsub.googleapis.com:443";
   }
 
+  public static String getDefaultMtlsEndpoint() {
+    return "pubsub.mtls.googleapis.com:443";
+  }
+
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
@@ -695,6 +699,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
       return initDefaults(builder);
     }
 
